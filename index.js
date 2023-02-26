@@ -3,7 +3,6 @@ const { Telegraf } = require("telegraf");
 const Parser = require("rss-parser");
 const path = require("path");
 const dbPath = path.join(__dirname, "db", "subscribers.db");
-console.log(dbPath);
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 const parser = new Parser();
@@ -58,7 +57,6 @@ bot.command("unsubscribe", async (ctx) => {
   }
 });
 
-
 const checkForUpdates = async () => {
   try {
     // Get all subscribers
@@ -87,7 +85,6 @@ const checkForUpdates = async () => {
         bot.telegram.sendMessage(chatId, latestItem.link);
       }
     }
-
   } catch (error) {
     console.error(error);
   }
