@@ -8,7 +8,6 @@ RUN npm install
 
 COPY . .
 
-RUN mkdir db && \
-    cp subscribers.db db/
+COPY ./db/subscribers.db /app/db/subscribers.db
 
 CMD [ "npm", "start" ]
