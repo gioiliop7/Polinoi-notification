@@ -6,6 +6,7 @@ A telegram bot that notificates you when your thesis to Polynoe (https://polynoe
 ## How to run
 - Create a telegram bot to get a token (https://learn.microsoft.com/en-us/azure/bot-service/bot-service-channel-connect-telegram?view=azure-bot-service-4.0)
 - Run the command: git pull
+- Run npm install
 - Create a env file 
 `RSS_FEED_URL=https://polynoe.lib.uniwa.gr/xmlui/feed/rss_2.0/11400/16 (Example of Department of Wine, Vine & Beverage Sciences)
 BOT_TOKEN="Your telegram Bot token"
