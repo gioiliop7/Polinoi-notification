@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  db:
+    container_name: subscribers-db
+    image: 'keinos/sqlite3:latest'
+    volumes:
+      - ./db:/data
+  app:
+    container_name: subscribers-app
+    build: .
+    ports:
+      - '8081:3000'
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: sqlite:/app/db/subscribers.db
+    depends_on:
+      - db
+    restart: always
