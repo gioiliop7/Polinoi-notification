@@ -1,5 +1,10 @@
 version: "3.9"
 services:
+  db:
+    image: nouchka/sqlite3
+    volumes:
+      - ./db:/usr/src/app/db
+    restart: always
   app:
     container_name: subscribers-app
     build: .
@@ -7,4 +12,6 @@ services:
       - '8081:3000'
     environment:
       NODE_ENV: production
+    volumes:
+      - ./db:/usr/src/app/db
     restart: always
