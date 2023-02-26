@@ -8,7 +8,9 @@ RUN npm install
 
 COPY . .
 
-# Copy the database file to the Docker image
-COPY db/subscribers.db .
+RUN npm run build
+
+RUN mkdir db && \
+    cp subscribers.db db/
 
 CMD [ "npm", "start" ]

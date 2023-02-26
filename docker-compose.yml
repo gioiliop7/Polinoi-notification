@@ -1,10 +1,5 @@
 version: "3.9"
 services:
-  db:
-    image: keinos/sqlite3:latest
-    volumes:
-      - ./db:/usr/src/app/db
-    restart: always
   app:
     container_name: subscribers-app
     build: .
@@ -13,5 +8,5 @@ services:
     environment:
       NODE_ENV: production
     volumes:
-      - ./db:/usr/src/app/db
+      - ./db:/app/db
     restart: always
